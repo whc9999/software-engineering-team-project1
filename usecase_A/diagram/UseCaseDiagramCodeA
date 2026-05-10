@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+
+actor "비회원" as Guest
+actor "회원" as Member
+actor "관리자" as Admin
+
+rectangle "온라인 설문조사 플랫폼" {
+  usecase "회원가입" as UC01
+  usecase "로그인" as UC02
+  usecase "회원 탈퇴" as UC03
+  usecase "통계 조회" as UC11
+}
+
+Guest -- UC01
+
+Member -- UC02
+Admin -- UC02
+
+Member -- UC03
+
+Admin -- UC11
+
+@enduml
